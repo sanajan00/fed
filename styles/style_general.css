@@ -22,8 +22,27 @@
     url(/fonts/vag-rounded-std-700.woff2);
 }
 
+@font-face {
+	font-family: "Unicons line";
+	src: url(/fonts/unicons-line-400.woff2);
+}
 
+@font-face {
+	font-family: "Painted Paradise";
+	src: url(/fonts/painted-paradise-400.woff2);
+}
 
+@font-face {
+	font-family: "Unknown Download";
+	src: url(/fonts/download.woff);
+}
+
+:root {
+	--AchtergrondKleur: white;
+	--TekstKleur: magenta;
+	--AccentKleur: black;
+	--Navigatie: purple;
+}
 
 
 
@@ -45,11 +64,51 @@ nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	font-family: "Vag Rounded";
+	font-weight: 700;
+	color: var(--Navigatie);
 }
+
+nav ul {
+	list-style: none;
+	display: flex;
+	gap: 2em;
+	position: fixed;
+	inset: 0;
+	translate: -100% 0;
+}
+
+@media (min-width:38em) {
+	nav button {
+		display: none;
+	}
+
+	nav ul {
+		position: static;
+    	translate: 0 0;
+    	transition: none;
+    	padding: 0;
+    	background: none;
+	}
+}
+
+nav li {
+    flex-basis: 0;
+    flex-grow: 0;
+  }
 
 nav img {
 	max-width: 6em;
 	margin: .5em;
+}
+
+nav button {
+	position: relative;
+	z-index: 1;
+}
+
+nav.is-open button img {
+	content: url(/images/icon-hamburger.svg);
 }
 
 button {
