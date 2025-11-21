@@ -58,6 +58,13 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   ### Bevindingen
   Lijst met je bevindingen die in de test naar voren kwamen:
+  - begon goed, website is responsive
+  - heeft geen alt text voor afbeeldingen
+  - pagina's hebben geen H1, in de footer opeens naar H6
+  - niet alles heeft een focus state
+  - niet elke link ziet eruit als een link
+  - geen dark mode
+  - geen high contrast mode
 
 </details>
 
@@ -90,16 +97,26 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   ### Stand van zaken
   hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
+  Goed:
+  - html opstellen
+  - begin aan css
+  - breakdownschets
+  - afbeeldingen downloaden
+
+  Lastig:
+  - grid goed opzetten
+  - fonts gebruiken
+  - beginnen aan javascript
 
 
   ### Agenda voor meeting
   samen met je groepje opstellen
 
-  | student 1      | student 2          | student 3    | student 4        |
-  | ---            | ---                | ---          | ---              |
-  | dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-  | en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-  | ...            | ...                | ...          | ...              |
+  | Arpine         | Omra               | Yenthe       | Laura            |
+  | wanneer grid   | Hoe gebruik je nth | Aria labels  | ---              |
+  | en wanneer flex| type op css van    | en custom    | en dan ik dat    |
+  |                | beide pagina's     | properties   | dit wil ik zeker |
+  |                | onderscheiden      |              | ...              |
 
 
   ### Verslag van meeting

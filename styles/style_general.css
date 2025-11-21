@@ -5,7 +5,61 @@
   box-sizing:border-box;  
 }
 
+@font-face {
+    font-family: "Adobe Clean";
+    src: url(/fonts/AdobeClean-Bold.otf),
+    url(/fonts/AdobeClean-Regular.otf);
+}
 
+@font-face {
+    font-family: "Fat Frank";
+    src: url(/fonts/fat-frank-900.woff2);
+}
+
+@font-face {
+    font-family: "Vag Rounded";
+    src: url(/fonts/vag-rounded-std-300.woff2),
+    url(/fonts/vag-rounded-std-700.woff2);
+}
+
+
+
+
+
+
+
+
+body {
+	margin: 0;
+}
+
+header {
+	background-color: #F0F0F0;
+}
+
+h1 {
+	display: none;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+nav img {
+	max-width: 6em;
+	margin: .5em;
+}
+
+button {
+	border: none;
+}
+
+img {
+	width: 95%;
+	border-radius: .5em;
+}
 
 
 
