@@ -5,6 +5,13 @@
   box-sizing:border-box;  
 }
 
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+
 @font-face {
     font-family: "Adobe Clean";
     src: url(/fonts/AdobeClean-Bold.otf),
@@ -41,97 +48,8 @@
 	--AchtergrondKleur: white;
 	--TekstKleur: magenta;
 	--AccentKleur: black;
-	--Navigatie: purple;
+	--TekstNavigatie: purple;
 }
-
-
-
-
-
-body {
-	margin: 0;
-}
-
-header {
-	background-color: #F0F0F0;
-}
-
-h1 {
-	display: none;
-}
-
-nav {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	font-family: "Vag Rounded";
-	font-weight: 700;
-	color: var(--Navigatie);
-}
-
-nav ul {
-	list-style: none;
-	display: flex;
-	gap: 2em;
-	position: fixed;
-	inset: 0;
-	translate: -100% 0;
-}
-
-@media (min-width:38em) {
-	nav button {
-		display: none;
-	}
-
-	nav ul {
-		position: static;
-    	translate: 0 0;
-    	transition: none;
-    	padding: 0;
-    	background: none;
-	}
-}
-
-nav li {
-    flex-basis: 0;
-    flex-grow: 0;
-  }
-
-nav img {
-	max-width: 6em;
-	margin: .5em;
-}
-
-nav button {
-	position: relative;
-	z-index: 1;
-}
-
-nav.is-open button img {
-	content: url(/images/icon-hamburger.svg);
-}
-
-button {
-	border: none;
-}
-
-img {
-	width: 95%;
-	border-radius: .5em;
-}
-
-
-
-
-/*********************/
-/* CUSTOM PROPERTIES */
-/*********************/
-:root {
-	/* startje */
-	--color-text:#111;
-	--color-background:#eee;
-}
-
 
 
 
@@ -142,3 +60,72 @@ img {
 
 /* jouw code */
 
+body {
+	margin: 0;
+}
+
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: var(--AchtergrondKleur);
+	color: var(--TekstNavigatie);
+	font-family: "Vag Rounded";
+	font-weight: 700;
+}
+
+a {
+		text-decoration: none;
+}
+
+nav ul {
+	display: flex;
+	gap: 2em;
+	list-style: none;
+}
+
+nav button {
+	display: none;
+	position: relative;
+	background-color: var(--AchtergrondKleur);
+}
+
+/* 
+
+nav button {
+	background-color: var(--AchtergrondKleur);
+	display: none;
+	position: relative;
+	z-index: 1;
+}
+
+nav ul {
+	background-color: var(--AchtergrondKleur);
+	list-style: none;
+	display: flex;
+	gap: 2em;
+	position: fixed;
+} */
+
+button {
+	border: none;
+}
+
+main img {
+	width: 95%;
+	border-radius: .5em;
+}
+
+h1 {
+	display: none;
+}
+
+h2 {
+	font-family: "Fat Frank";
+	font-weight: 500;
+}
+
+p {
+	font-family: "Vag Rounded";
+	font-weight: 500;
+}
