@@ -81,9 +81,6 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### dynamisch deel (bijv menu): 
   <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="breakdown van een dynamisch deel">
 
-  ### wellicht nog een dynamisch deel (bijv filter): 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="breakdown van nog een dynamisch deel">
-
 </details>
 
 
@@ -113,10 +110,10 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   samen met je groepje opstellen
 
   | Arpine         | Omra               | Yenthe       | Laura            |
-  | wanneer grid   | Hoe gebruik je nth | Aria labels  | ---              |
-  | en wanneer flex| type op css van    | en custom    | en dan ik dat    |
-  |                | beide pagina's     | properties   | dit wil ik zeker |
-  |                | onderscheiden      |              | ...              |
+  | wanneer grid   | Hoe gebruik je nth | Aria labels  | afwezig|
+  | en wanneer flex| type op css van    | en custom    | |
+  |                | beide pagina's     | properties   | |
+  |                | onderscheiden      |              | |
 
 
   ### Verslag van meeting
@@ -139,25 +136,24 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor 2<sup>e</sup> voortgang</summary>
 
   ### Stand van zaken
-  hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
+ Moeite met carousel; plaatjes zijn verschillende groottes en grid lijkt een extra column te hebben zonder dat ik dit aangegeven had.
 
 
   ### Agenda voor meeting
   samen met je groepje opstellen
 
-  | student 1      | student 2          | student 3    | student 4        |
-  | ---            | ---                | ---          | ---              |
-  | dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-  | en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-  | ...            | ...                | ...          | ...              |
+  Arpine: Hoe kan ik ervoor zorgen dat de plaatjes in de carousel dezelfde grootte zijn? Waarom krijgt de grid een extra column erbij als er niks in zit?
+
+  Omra: Hoe krijg ik de h2 van sectie 4 onder de image? Op mobille is s5 een hele blok en op groter scherm aparte blokken, hoe doe je dit? Hoe verander je lettertype van a in adress?
+
+  Yenthe: Hoe kunnen mijn afbeeldingen mee schalen zodat ze langer worden in de lengte? Hoe positioneren met display grid?
+
+  Laura: Meerdere divs omdat ik het anders niet goed gepositioneerd krijg, mag dat? Hoe kan ik in mijn header met bepaalde breedte de svg in het menu wel en niet tonen, mag dit met display none? Bij mijn spotify section is er nog een kruisje die het sluit, moet dit werken> Hoe krijg ik deze rechts in de hoek gepositioneerd? Ik heb pijltjes in mijn carousel nodig maar die krijg ik niet gepoisitioneerd, hoe doe ik dit?
 
 
   ### Verslag van meeting
-  hier na afloop snel de uitkomsten van de meeting vastleggen
-
-
-
-
+  Flex-basis en flex-shrink gebruiken voor li, afbeeldingen min-width en max-width geven. Grid heeft geen extra column, afbeelding neemt niet de hele breedte van de collumn in. Width = 100% maken om dit op te lossen.
+  Nog te doen: light/darkmode
 </details>
 
 
@@ -168,9 +164,18 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 <details>
   <summary>uitwerken na test in 9<sup>e</sup> werkgroep</summary>
+  <img src="readme-images/checklist_1.jpg" width="375px" alt="uitkomst test 2">
+  <img src="readme-images/checklist_2.jpg" width="375px" alt="uitkomst test 2">
+  <img src="readme-images/checklist_3.jpg" width="375px" alt="uitkomst test 2">
+  <img src="readme-images/checklist_4.jpg" width="375px" alt="uitkomst test 2">
+  <img src="readme-images/checklist_5.jpg" width="375px" alt="uitkomst test 2">
+  <img src="readme-images/checklist_6.jpg" width="375px" alt="uitkomst test 2">
 
   ### Bevindingen
   Lijst met je bevindingen die in de test naar voren kwamen (geef ook aan wat er verbeterd is):
+
+  Headings staan nu goed op volgorde, afbeeldingen hebben bijpassende alt tekst, links en buttons hebben aria labels.
+  Dark-mode is toegevoegd
 
 </details>
 
@@ -184,26 +189,25 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor 3<sup>e</sup> voortgang</summary>
 
   ### Stand van zaken
-  hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
+  Carousel zag er nog niet goed genoeg uit, moeite met juiste elementen in css selecteren.
 
 
   ### Agenda voor meeting
   samen met je groepje opstellen
 
-  | student 1      | student 2          | student 3    | student 4        |
-  | ---            | ---                | ---          | ---              |
-  | dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-  | en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-  | ...            | ...                | ...          | ...              |
+  Arpine: Kan een h3 en img ook als een link gemaakt worden en hoe doe je het dan met positioneren?
 
+  Omra: Hoe krijg ik de carousel vakjes even groot? Hoe maak ik een border line langer? Hoe verwijder ik onnodige witruimte bij de p?
+
+  Yenthe: Hoe gaat het scrollen bij mijn carousel weg? Hoe maak ik ruimte aan de linker en rechter kant van de 4 list items (header)? Grid in footer werkt niet?
+
+  Laura: Het verwijderen van een element uit de DOM met js lukt me niet goed om responsive te maken. Ik heb 2 divs gebruikt voor makkelijke opmaak, hoe kan ik dit op een betere manier doen? Hoe download ik de svg code naar een img?
 
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
+  Goed op weg, gebruik juiste selectoren (a > h3 bijv), wees specifiek. Scroll weghalen met scroll overflow y = auto
 
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  Te weinig tijd gehad om in meer diepgang te kijken naar mijn code, was als laatste aan de beurt en tijd was al voorbij 
 
 </details>
 
@@ -217,19 +221,21 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor eindgesprek</summary>
 
   ### Je uitkomst - karakteristiek screenshots:
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="uitomst opdracht 1">
+  <img src="readme-images/homepage.png" width="375px" alt="uitkomst opdracht 1">
 
 
   ### Dit ging goed/Heb ik geleerd: 
-  Korte omschrijving met plaatjes
+  - Positioneren met grid 
+  - Werkende hamburgermenu
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="top">
-
+  <img src="readme-images/grid-mobile.png" width="375px" alt="top">
+  <img src="readme-images/grid-bigscreen.png" width="375px" alt="top">
 
   ### Dit was lastig/Is niet gelukt:
-  Korte omschrijving met plaatjes
+  Uitklapbare informatie "accordion"
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="bummer">
+  <img src="readme-images/accordion_nietgelukt.png" width="375px" alt="bummer">
+  <img src="readme-images/accordion_origin.png" width="375px" alt="bummer">
 </details>
 
 
@@ -245,8 +251,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Nb. ChatGpT en andere AI horen er ook bij.
   Nb. Vermeld de bronnen ook in je code.
 
-  1. bron 1
-  2. bron 2
-  3. ...
-
+  1. [bron 1](https://www.w3schools.com/howto/howto_js_accordion.asp)
+  2. [bron 2](https://www.a11yproject.com/posts/how-to-hide-content/)
+  3. Overige code is geleerd tijdens de werkgroepen 
 </details>

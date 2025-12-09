@@ -1,0 +1,131 @@
+/* Breadcrumbs */
+ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5em;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    font-family: "Vag Rounded";
+    font-weight: 500;
+    font-size: .9em;
+}
+
+li svg {
+    width: .8em;
+    margin-left: .5em;
+}
+
+li p {
+    margin: 0;
+}
+
+ol li a {
+    color: var(--HuisstijlKleur);
+}
+
+ol li a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--HuisstijlKleur);
+}
+
+main section:first-of-type {
+    margin: 0 1em 0 1em;
+}
+
+/* Productinformatie */
+main section:nth-of-type(2) {
+    margin: 0 1em 0 1em;
+}
+
+main section:nth-of-type(2) article {
+    display: grid;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: var(--SchaduwKleur);
+}
+
+main section:nth-of-type(2) p:first-of-type {
+    grid-row-start: 3;
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--HuisstijlKleur);
+}
+
+main section:nth-of-type(2) p:last-of-type {
+    margin: 0;
+    font-size: larger;
+    font-weight: 700;
+}
+
+main section:nth-of-type(2) img {
+    grid-row-start: 2;
+    min-width: 15em;
+    max-width: 30em;
+}
+
+/* Allergenen, ingrediënten en beschrijving */
+main section:nth-of-type(3) {
+    margin: 1em;
+}
+
+main section:nth-of-type(3) > button {
+    background-color: var(--TekstNavigatie);
+    border-radius: 3em;
+    padding: 1.5em 3em 1.5em 3em;
+	font-family: "Fat Frank";
+	font-weight: 400;
+	text-transform: uppercase;
+	color: var(--AchtergrondKleur);
+
+}
+
+main section:nth-of-type(3) > button:hover {
+    background-color: var(--HoverButtons);
+}
+
+main section:nth-of-type(3) ul {
+    list-style: none;
+    padding: 0;
+}
+
+main section:nth-of-type(3) li {
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: var(--SchaduwKleur);
+}
+
+main section:nth-of-type(3) li:last-of-type strong {
+    text-transform: none;
+}
+
+main section:nth-of-type(3) h2 {
+    font-size: large;
+}
+
+/* Voor grotere schermen */
+@media screen and (min-width: 40em) {
+    main {
+        display: grid;
+    }
+
+    section:nth-of-type(2) {
+        grid-column-start: 1;
+        grid-row-start: 2;
+    }
+
+    section:nth-of-type(2) img {
+       width: 40em;
+    }
+
+    section:nth-of-type(3) {
+        grid-column-start: 2;
+        grid-row-start: 2;
+    }
+
+    main section:nth-of-type(2) article {
+        border-style: none;
+    }
+}

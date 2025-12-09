@@ -46,12 +46,27 @@
 
 :root {
 	--AchtergrondKleur: white;
-	--TekstKleur: magenta;
-	--AccentKleur: black;
-	--TekstNavigatie: purple;
+	--AfbeeldingTekst: white;
+	--HuisstijlKleur: #FF2C87;
+	--SchaduwKleur: rgba(142, 142, 142, 0.66);
+	--TekstNavigatie: #560075;
+	--StandaardText: black;
+	--HoverButtons: rgb(51, 4, 51);
+	--ButtonKleur: #ffda57;
 }
 
-
+@media (prefers-color-scheme: dark) {
+  :root {
+	--AchtergrondKleur: rgb(0, 0, 0);
+	--AfbeeldingTekst: white;
+	--HuisstijlKleur: #FF2C87;
+	--SchaduwKleur: rgba(118, 118, 118, 0.66);
+	--TekstNavigatie: #8735a5;
+	--StandaardText: rgb(255, 255, 255);
+	--HoverButtons: rgb(106, 52, 106);
+	--ButtonKleur: #ffda57;
+  }
+ }
 
 
 /****************/
@@ -62,53 +77,148 @@
 
 body {
 	margin: 0;
+	justify-content: center;
+	background-color: var(--AchtergrondKleur);
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: sticky;
+	top: 0;
+	z-index: 2;
+	padding: .5em;
+	background-color: var(--AchtergrondKleur);
+}
+
+header a svg {
+	width: 2.5em;
+	padding: .5em;
+	background-color: var(--TekstNavigatie);
+	border-radius: 5em;
+}
+
+header button {
+	background-color: var(--AchtergrondKleur);
+}
+
+header button svg {
+	width: 3em;
 }
 
 nav {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	position: fixed;
+	inset: 0;
+	translate: -200% 0%;
+	transition: .5s;
+
 	background-color: var(--AchtergrondKleur);
 	color: var(--TekstNavigatie);
+	font-family: "Fat Frank";
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+nav a {
+	color: var(--StandaardText);
+}
+
+nav.toonMenu {
+	translate: 0% 0%;
+}
+
+nav.toonMenu > ul {
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+	margin: 1em 0 0 0;
+	padding: 0;
+	gap: 2em;
+}
+
+nav li {
+	padding-left: 1em;
+}
+
+nav button svg {
+	width: 2em;
+	margin-top: .5em;
+}
+
+@media (min-width:38em) {
+  header > button {
+    display:none;
+  }
+  
+  nav {
+    position:static;
+    translate:unset;
+    padding:0;
+    background:none;
+  }
+  
+  nav button {
+    display:none;
+  }
+  
+  nav ul {
+    display:flex;
+    gap:1em;
+	list-style: none;
+  }
+  
+  nav a {
+    flex-direction:column;
+    border:none;
 	font-family: "Vag Rounded";
 	font-weight: 700;
+	text-transform: none;
+	color: var(--TekstNavigatie);
+  }
+  
+  header > a:last-of-type {
+    flex-direction:column;
+  }
+
+  nav li:last-of-type a {
+	background-color: var(--ButtonKleur);
+	border-radius: 2em;
+	padding: .5em;
+	transition: .2s;
+  }
+
+  nav li:last-of-type a:hover {
+	background-color: var(--TekstNavigatie);
+	color: var(--ButtonKleur);
+  }
 }
 
 a {
-		text-decoration: none;
+	text-decoration: none;
+	transition: .2s;
 }
 
-nav ul {
-	display: flex;
-	gap: 2em;
-	list-style: none;
+a:hover {
+	color: var(--HuisstijlKleur);
 }
 
-nav button {
-	display: none;
-	position: relative;
-	background-color: var(--AchtergrondKleur);
+a:focus-visible {
+	outline-offset: .1em;
+	outline-color: var(--HuisstijlKleur);
 }
-
-/* 
-
-nav button {
-	background-color: var(--AchtergrondKleur);
-	display: none;
-	position: relative;
-	z-index: 1;
-}
-
-nav ul {
-	background-color: var(--AchtergrondKleur);
-	list-style: none;
-	display: flex;
-	gap: 2em;
-	position: fixed;
-} */
 
 button {
 	border: none;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+button:focus-visible {
+	outline-offset: .1em;
+	outline-color: var(--HuisstijlKleur);
 }
 
 main img {
@@ -116,16 +226,81 @@ main img {
 	border-radius: .5em;
 }
 
-h1 {
-	display: none;
+
+/* .visually-hidden afkomstig van https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 h2 {
+	text-transform: uppercase;
 	font-family: "Fat Frank";
 	font-weight: 500;
+	color: var(--StandaardText);
+}
+
+h3 {
+	font-family: "Vag Rounded";
+	margin: 0;
+}
+
+@media screen and (min-width: 38em) {
+  h2 {
+    font-size: 3em;
+  }
 }
 
 p {
 	font-family: "Vag Rounded";
 	font-weight: 500;
+	line-height: 2em;
+	color: var(--StandaardText);
+}
+
+strong {
+	text-transform: uppercase;
+}
+
+footer section {
+    display: flex;
+	flex-wrap: wrap;
+    gap: 1em;
+}
+
+footer ul {
+	margin: 0;
+	padding: 0;
+}
+
+footer ul:last-of-type {
+	display: flex;
+}
+
+footer li {
+    list-style: none;
+	margin: .5em;
+}
+
+footer a {
+    font-family: "Vag Rounded";
+    color: var(--StandaardText)
+}
+
+footer h2 {
+	font-size: medium;
+}
+
+/* Voor grotere schermen */
+@media screen and (min-width: 40em) {
+	footer {
+		justify-items: center;
+		margin-top: 2em;
+		margin-bottom: 1em;
+	}
 }
