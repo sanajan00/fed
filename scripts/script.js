@@ -20,13 +20,17 @@ function sluitMenu() {
   deNav.classList.remove("toonMenu");
 }
 
-//  PRODUCTINFORMATIE
-// https://www.w3schools.com/howto/howto_js_accordion.asp
+// Code van ChatGPT
+const detail = document.getElementById('productbeschrijving');
 
-// var openInfo = document.querySelector("section:nth-of-type(3) li button");
-// openInfo.onclick = Informatie;
+function setDetailOpen() {
+  if (window.innerWidth >= 640) { // 40em ≈ 640px
+    detail.setAttribute('open', '');
+  } else {
+    detail.removeAttribute('open');
+  }
+}
 
-// function Informatie() {
-//   var productInformatie = document.querySelector("section:nth-of-type(3) p");
-//   productInformatie.classList.add("toonInfo");
-// }  NIET GELUKT
+// Bij laden en bij resizen
+window.addEventListener('load', setDetailOpen);
+window.addEventListener('resize', setDetailOpen);

@@ -36,96 +36,288 @@ main section:first-of-type {
 
 /* Productinformatie */
 main section:nth-of-type(2) {
-    margin: 0 1em 0 1em;
-}
-
-main section:nth-of-type(2) article {
     display: grid;
-    border-bottom-style: solid;
-    border-width: 1px;
-    border-color: var(--SchaduwKleur);
+    margin: 1em;
 }
 
-main section:nth-of-type(2) p:first-of-type {
-    grid-row-start: 3;
+main section:nth-of-type(2) h2 {
+    font-size: xx-large;
     margin: 0;
-    font-size: 1.5em;
-    font-weight: 700;
-    color: var(--HuisstijlKleur);
-}
-
-main section:nth-of-type(2) p:last-of-type {
-    margin: 0;
-    font-size: larger;
-    font-weight: 700;
 }
 
 main section:nth-of-type(2) img {
     grid-row-start: 2;
-    min-width: 15em;
-    max-width: 30em;
 }
 
-/* Allergenen, ingrediënten en beschrijving */
-main section:nth-of-type(3) {
-    margin: 1em;
+main section:nth-of-type(2) > p {
+    font-weight: 700;
+    font-size: larger;
+    margin: 0;
 }
 
-main section:nth-of-type(3) > button {
-    background-color: var(--TekstNavigatie);
-    border-radius: 3em;
-    padding: 1.5em 3em 1.5em 3em;
-	font-family: "Fat Frank";
-	font-weight: 400;
-	text-transform: uppercase;
-	color: var(--AchtergrondKleur);
-
+main section:nth-of-type(2) > p:first-of-type {
+    color: var(--HuisstijlKleur);
+    font-size: x-large;
 }
 
-main section:nth-of-type(3) > button:hover {
-    background-color: var(--HoverButtons);
-}
-
-main section:nth-of-type(3) ul {
-    list-style: none;
-    padding: 0;
-}
-
-main section:nth-of-type(3) li {
+main section:nth-of-type(2) details {
+    padding: 1em 0;
     border-bottom-style: solid;
     border-width: 1px;
     border-color: var(--SchaduwKleur);
 }
 
-main section:nth-of-type(3) li:last-of-type strong {
-    text-transform: none;
+main section:nth-of-type(2) details:first-of-type {
+    margin-top: 1em;
+    border-top-style: solid;
+}
+
+main section:nth-of-type(2) summary {
+    list-style: none;
+}
+
+main section:nth-of-type(2) h3 {
+    font-family: "Fat Frank";
+    text-transform: uppercase;
+    transition: 200ms;
+    cursor: pointer;
+}
+
+main section:nth-of-type(2) h3:hover {
+    color: var(--HuisstijlKleur);
+}
+
+main section:nth-of-type(2) button {
+    font-family: "Fat Frank";
+    font-size: medium;
+    text-transform: uppercase;
+    color: var(--AchtergrondKleur);
+    background-color: var(--TekstNavigatie);
+    margin-top: 1em;
+    padding: 1em 2em;
+    border-radius: 2em;
+    justify-self: start;
+}
+
+/* Carousel */
+main section:nth-of-type(3) {
+    background-color: var(--HuisstijlKleur);
+    padding: 1em;
 }
 
 main section:nth-of-type(3) h2 {
-    font-size: large;
+    color: var(--AchtergrondKleur);
+    margin-bottom: 0;
+}
+
+main section:nth-of-type(3) > a {
+    font-family: "Fat Frank";
+    color: var(--ButtonKleur);
+    text-transform: uppercase;
+}
+
+main section:nth-of-type(3) > a:hover {
+    text-decoration: underline;
+}
+
+main section:nth-of-type(3) ul {
+    gap: 5em;
+    margin: 0;
+    padding: 1em;
+    display: flex;
+    overflow: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overscroll-behavior-x: contain;
+}
+
+/* Code van https://codepen.io/shooft/pen/QwjQGZe aangepast met juiste styling */
+main section:nth-of-type(3) ul::scroll-button(*) {
+    width:2.5em;
+    aspect-ratio:1;
+    margin: -15em 0 0;
+    padding:0;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:1em;
+    position: absolute;
+
+    background-color: var(--ButtonKleur);
+}
+
+main section:nth-of-type(3) ul::scroll-button(right) {
+    content: "" / "Next";
+    right:clamp(1.5rem, 5vw, 2rem);
+
+    background-image: url("../images/arrow-right-svgrepo-com.svg");
+    background-position: center;
+    background-size: contain;
+}
+
+main section:nth-of-type(3) ul::scroll-button(left) {
+    content: "" / "Previous";
+    left:clamp(1.5rem, 5vw, 2rem);
+
+    background-image: url("../images/arrow-left-svgrepo-com.svg");
+    background-position: center;
+    background-size: contain;
+}
+  
+main section:nth-of-type(3) ul::scroll-button(*):disabled {
+    opacity: 0;
+}
+
+main section:nth-of-type(3) li {
+    scroll-snap-align:center;
+    list-style: none;
+    background-color: var(--AchtergrondKleur);
+    border-radius: 1em;
+    padding: 1em;
+}
+
+main section:nth-of-type(3) article {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-template-rows: 1fr max-content max-content;
+}
+
+main section:nth-of-type(3) article a:nth-of-type(1) {
+    grid-row-start: 3;
+    grid-column-start: 1;
+    margin-bottom: .5em;
+}
+
+main section:nth-of-type(3) article p {
+    grid-row-start: 4;
+    grid-column-start: 1;
+    align-self: center;
+    font-weight: 700;
+    color: var(--HuisstijlKleur);
+}
+
+main section:nth-of-type(3) article a:nth-of-type(2) {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+main section:nth-of-type(3) article a:nth-of-type(2) img {
+    width: 100%;
+}
+
+main section:nth-of-type(3) article a:nth-of-type(3) {
+    grid-column-start: 1;
+    grid-row-start: 4;
+    justify-self: end;
+    align-self: center;
+    font-family: "Vag Rounded";
+    font-weight: 700;
+    color: var(--AchtergrondKleur);
+    background-color: var(--TekstNavigatie);
+    padding: .5em;
+    border-radius: .5em;
+}
+
+main section:nth-of-type(3) article button {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    align-self: flex-start;
+    justify-self: end;
+    background: none;
+    padding: 0;
+    aspect-ratio: 1;
+}
+
+main section:nth-of-type(3) article button svg {
+    width: 2.5em;
+    margin: 0;
 }
 
 /* Voor grotere schermen */
+
 @media screen and (min-width: 40em) {
+    /* .visually-hidden afkomstig van https://www.a11yproject.com/posts/how-to-hide-content/ */
+    .visually-hidden {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
+
     main {
         display: grid;
+        grid-template-columns: 60% 40%;
+        grid-auto-rows: auto;
+        gap: 1em;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 0em;
     }
 
-    section:nth-of-type(2) {
+    main section:nth-of-type(1) {
         grid-column-start: 1;
+        grid-column-end: 3;
+        padding-left: 10em;
+    }
+
+    main section:nth-of-type(2) {
+        padding-left: 10em;
+        grid-template-columns: 60% 40%;
+        grid-template-rows: auto;
+        grid-column-start: 1;
+        grid-column-end:3;
+    }
+
+    main section:nth-of-type(2) img {
+        max-width: 30em;
+        justify-self: center;
         grid-row-start: 2;
+        grid-row-end: 4;
     }
 
-    section:nth-of-type(2) img {
-       width: 40em;
-    }
-
-    section:nth-of-type(3) {
+    main section:nth-of-type(2) p {
         grid-column-start: 2;
         grid-row-start: 2;
     }
 
-    main section:nth-of-type(2) article {
-        border-style: none;
+    main section:nth-of-type(2) > p:nth-of-type(2) {
+        margin-top: 2em;
+    }
+
+    main section:nth-of-type(2) div {
+        grid-column: 2;
+        grid-row: 3;
+        display: flex;
+        flex-direction: column;
+    }
+
+    main section:nth-of-type(2) div details:nth-of-type(3) {
+        order: -1;
+        border-style:none;
+    }
+
+    main section:nth-of-type(2) button {
+        grid-row-start: 4;
+        grid-column-start: 2;
+    }
+
+    main section:nth-of-type(3) {
+        grid-column: 1 / -1;
+        grid-row-start: 4;
+    }
+
+    main section:nth-of-type(3) ul {
+        display: flex;
+        max-width: 80%;
+        justify-self: center;
+        gap: 1em;
+        padding: 1em 0;
+        overflow-x: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        overscroll-behavior-x: contain;
     }
 }

@@ -1,3 +1,14 @@
+/* .visually-hidden afkomstig van https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 /* Dit is de "header" banner */
 main section:nth-of-type(1) {
     display: grid;
@@ -135,6 +146,7 @@ main section:nth-of-type(3) li {
     box-shadow:0 0 .5em .05em var(--SchaduwKleur);
     border-radius: 1em;
     max-width: 12em;
+    padding: 1em;
 }
 
 main section:nth-of-type(3) article {
@@ -177,7 +189,6 @@ main section:nth-of-type(3) button:first-of-type {
     justify-self: end;
     background: none;
     padding: 0;
-    margin: .2em;
     width: 3em;
     aspect-ratio: 1 / 1;
 }
@@ -224,53 +235,22 @@ main section:nth-of-type(3) > a:hover {
 main section:nth-of-type(4) {
     display: grid;
     background-color: var(--HuisstijlKleur);
+    background-image: url(../images/background-marketing.svg);
     align-items: center;
-}
-
-main section:nth-of-type(4) img:first-of-type {
-    grid-row-start: 1;
-    grid-column-start: 1;
-    width: 100%;
-    border-radius: 0;
-}
-
-main section:nth-of-type(4) img:last-of-type {
-    grid-row-start: 2;
-    grid-column-start: 1;
-    width: 100%;
-    border-radius: 0;
-}
-
-main section:nth-of-type(4) article {
-    grid-row-start: 2;
-    grid-column-start: 1;
-    display: grid;
-    grid-template-columns: 1em 1fr 1em;
-    grid-template-rows: 2em 3em 6em 6em;
-    align-items: center;
-    justify-items: center;
-}
-
-main section:nth-of-type(4) article img {
-    grid-row-start: 1;
-    grid-row-end: 5;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    width: 100%;
-    max-height: 15em;
+    padding-bottom: 2em;
 }
 
 main section:nth-of-type(4) h2 {
-    grid-row-start: 2;
-    grid-column-start: 2;
+    grid-row-start: 3;
     z-index: 1;
     color: var(--AchtergrondKleur);
+    margin: 0;
+    justify-self: center;
 }
 
 main section:nth-of-type(4) p:first-of-type {
-    grid-row-start: 1;
-    grid-column-start: 2;
-    align-self: end;
+    grid-row-start: 2;
+    justify-self: center;
     margin: 0;
     z-index: 1;
     font-family: "Painted Paradise";
@@ -279,22 +259,25 @@ main section:nth-of-type(4) p:first-of-type {
 }
 
 main section:nth-of-type(4) p:last-of-type {
-    grid-row-start: 3;
-    grid-column-start: 2;
     text-align: center;
     z-index: 1;
     color: var(--AchtergrondKleur);
 }
 
 main section:nth-of-type(4) a {
-    grid-row-start: 4;
-    grid-column-start: 2;
     font-family: "Fat Frank";
     text-transform: uppercase;
     color: var(--TekstNavigatie);
     background-color: var(--ButtonKleur);
     padding: 1em 3em 1em 3em;
     border-radius: 2em;
+    justify-self: center;
+}
+
+main section:nth-of-type(4) img {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    width: 100%;
 }
 
 /* Voor grotere schermen */
